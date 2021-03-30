@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Nav />
         <div className='content'>
-          <Button onClick={globStore.add}>+</Button>
+          <Button onTouchMove={globStore.add}>+</Button>
           <h3>
             当前值：
             {globStore.count}
@@ -22,7 +22,7 @@ function App() {
             计算属性：
             {globStore.compGet}
           </h3>
-          <Button onClick={globStore.los}>-</Button>
+          <Button onTouchMove={globStore.los}>-</Button>
         </div>
         <RouterContainer />
       </BrowserRouter>

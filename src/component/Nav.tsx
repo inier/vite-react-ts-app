@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 import { MenuInfo } from '../../node_modules/rc-menu/lib/interface';
 
-const Nav: React.FC = () => {
-  const [current, changeCurrent] = useState<string>('page1');
+const Nav: React.FC = ({ item = 'page1' }) => {
+  const [current, changeCurrent] = useState<string>(item);
   const history = useHistory();
 
   const handleClick = (e: MenuInfo) => {
@@ -13,6 +13,12 @@ const Nav: React.FC = () => {
     history.push(key);
     changeCurrent(key);
   };
+
+  useEffect(() => {
+    const key = history.location.pathname.split('/')[1];
+    history.push(key);
+    changeCurrent(key);
+  }, []);
 
   return (
     <Menu onClick={(e) => handleClick(e)} selectedKeys={[current]} mode="horizontal">
