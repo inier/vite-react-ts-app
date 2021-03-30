@@ -18,7 +18,6 @@ module.exports = {
 
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    'jsx-quotes': ['error', 'prefer-single'],
     semi: ['error', 'always'],
     // 禁止缩进错误
     indent: 0,

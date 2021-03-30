@@ -4,10 +4,16 @@
   height: 300px;
   grid-template-columns: repeat(auto-fill, 100px);
   grid-template-rows: repeat(auto-fill, 100px);
+  background-color: #f33;
+  margin-top: 1px;
+  margin-left: 1px;
   .item {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: pink;
+    border: 1px solid #f33;
+    margin-left: -1px;
+    margin-top: -1px;
   }
 }
